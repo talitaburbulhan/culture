@@ -1,3 +1,10 @@
+/** Existem alguns erros de sintaxe propositais no arquivo css. Encontre os erros que causaram os comportamentos a seguir, e corrija o css para obter o resultado esperado. O objetivo não é criar classes de css, mas corrigir pequenos defeitos na sintaxe das classes já existentes no css. Vejam as imagens na pasta "referencias" (os itens referentes a mouse-over não aparecem entre as diferenças)
+2a. Os ícones de redes sociais deveriam ter um destaque ao passar o mouse sobre eles, ficando um pouco mais escuros
+2b. A fonte da linha-fina ("From ancient times...") deveria ter um peso um pouco maior
+2c. O subtítulo "Origins" deveria ter fonte maior e com mais peso
+2d. O bloco de imagem deveria ter a largura da coluna de texto, e a legenda da imagem, um tamanho menor
+2e. No cabeçalho, o logo "Culture" deveria mudar levemente de cor ao passar o mouse sobre o item **/
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
 :root {
     --theme-color: #472479;
@@ -119,13 +126,13 @@ a {
     letter-spacing: 0.04rem;
 }
 
-.article-social-icons {
+.article-social-icons {  /** aqui estão definidas opções de estilo para o container que contém os ícones das mídias sociais**/
     display: flex;
     justify-content: center;
 }
 
-.article-social-icons a {
-    font-size: 2rem;
+.article-social-icons a {  /** O estilo definido aqui se refere  aos itens "a" que estão dentro de um elemento que tem a classe article-social-icons**/
+    font-size: 2rem;       /** essa classe define o estilo no estado natural do elemento, sem passsar o mouse em cima, ou seja, como ele será visualizado sem nenhum alteração **/  
     width: 5rem;
     height: 5rem;
     text-decoration: none;
@@ -137,7 +144,8 @@ a {
     margin: 0.5rem;
 }
 
-.article-social-icons a.hover {
+/**.article-social-icons a.hover {   Aqui temos o elemento "a" com uma classe "hover"  e isso está ERRADO. Porque o "hover" não é uma classe, ele é um estado **/
+.article-social-icons a:hover {      /** Para definir estado no CSS usa-se " : ". É a marcação para pseusoclasses **/   
     font-size: 2rem;
     text-decoration: none;
     color: rgba(150, 150, 150, 1);
@@ -246,5 +254,4 @@ img.img-opening {
     max-width: var(--main-column-max);
     margin: 0 auto;
     padding: 0 1rem;
-}
 }
