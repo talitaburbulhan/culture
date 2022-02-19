@@ -220,11 +220,13 @@ img.img-opening {
     margin: 0 auto 3.2rem auto;
 }
 
-.subheading {
-    font-weight: 500;
-    font-size: 2rem;
-}
-
+/**.subheading {  trecho errado: o problema aqui tem a ver com a hierarquia do CSS, ou seja, como o CSS lida com  regras de estilo conflitantes. Se um etilo for definido duas vezes, como o CSS irá lidar com isso?**/
+.article-body p.subheading { /** Trecho correto:  tornamos ele mais específico**/
+    font-weight: 500;  /** O primeiro fator de hierarquia é a ordem, o estilo que foi escrito primeiro é subrescrito pelo estilo escrito depois **/
+    font-size: 2rem;  /** se no estilo que foi escrtio primeiro houver alguma propriedade que não há no estilo que foi escrito depois, o resultado será os estilo escrito depois + a propriedade do primeiro que não havia no segundo. O CSS sobrescresve propriedade repetidas **/
+}                     /** Outra regra tem a ver com o quão específica é a descrição de uma classe. Um estilo mais específico terá prioridade sobre outro menos específico  **/   
+                      /** esse estilo não está sendo aplicado,  pq mais pra cima foi definido um mais específico, o '.article-body p'. Ali dissemos que o 'p' tem peso de fonte 300, por isso não está considerando o peso 500 do presente estilo  **/    
+                    
 .side-info {
     margin: 3.2rem 0 -3.2rem auto;
     float: right;
