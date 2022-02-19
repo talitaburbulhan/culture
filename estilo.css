@@ -74,7 +74,9 @@ a {
     padding: 2rem 3.2rem;
 }
 
-.top-brand :hover {
+/** Outro problema de hierarquia **/
+ /**.top-brand :hover { VERSÃO ERRADA: Do jeito como está escrito, diz que quer o pseudoelemento 'hover', dentro do elemento 'brand' **/
+.top-brand:hover {      /** VERSÃO CORRETA: queremos o 'hover' DO PRÓPRIO ELEMENTO 'brand' **/  
     background-color: #5d3b8d;
 }
 
