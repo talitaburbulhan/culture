@@ -170,14 +170,15 @@ img.img-opening {
     padding: 0 6rem;
 }
 
-.img-block #small img {
-    display: block;
+/** .img-block #small img {  VERSÃO ERRADA. COMO LER: A imagem (img) está dentro do bloco com ID #small que está dentro de uma bloco Img-block. IMG-BLOCK = pai | #small = filho | img = neto -> essa estrutura NÃO corresponde com a do HTML **/
+.img-block.small img {   /** VERSÃO CORRETA: No html (figure class = "img-block small") o small não é um ID, ele é uma segunda classe que é aplicada ao mesmo bloco de conteúdo **/
+    display: block;      /** Quando queremos nos referir a duas classes para um mesmo bloco, não se usa espaço e se coloca um ponto entre as classes **/
     width: 100%;
     height: auto;
     margin: 0;
 }
 
-.img-block #small .img-caption {
+.img-block.small .img-caption {  /** Vamos transformar o small de ID para classe, antes estava assim: img-block #small .img-caption  **/
     display: block;
     width: 100%;
     height: auto;
