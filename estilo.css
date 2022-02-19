@@ -6,7 +6,7 @@
 2e. No cabeçalho, o logo "Culture" deveria mudar levemente de cor ao passar o mouse sobre o item **/
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
-:root {
+:root {                            /** no root são definidas as variáveis que eu vou reutilizar nas classes, para não ter que redigitar a toda hora **/
     --theme-color: #472479;
     --text-color: #000;
     --font-weight-lead: 500;
@@ -204,9 +204,10 @@ img.img-opening {
     padding: 0 6rem;
 }
 
-.article-body p.lead {
+.article-body p.lead {  /** Aqui encontramos um 'p' com a classe 'lead' , esse 'p' está dentro de um elemento '.article-body' **/
     font-size: 2.2rem;
-    font-weight: var(-font-weight-lead);
+  /**  font-weight: var(-font-weight-lead);    Essa é a versão errada, não está correto porque são 2 -- na frente do font, tem que estar escrita da mesma forma como foi declarada lá cima, no 'root' **/
+    font-weight: var(--font-weight-lead);
     color: var(--font-color);
     background-color: #fff;
     padding: 6rem 6rem 1.6rem 6rem;
